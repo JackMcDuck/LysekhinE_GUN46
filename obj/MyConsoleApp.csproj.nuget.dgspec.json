@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp/MyConsoleApp.csproj": {}
+    "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp.csproj": {}
   },
   "projects": {
-    "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp/MyConsoleApp.csproj": {
+    "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp/MyConsoleApp.csproj",
+        "projectUniqueName": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp.csproj",
         "projectName": "MyConsoleApp",
-        "projectPath": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp/MyConsoleApp.csproj",
+        "projectPath": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp.csproj",
         "packagesPath": "/Users/evgenilysekhin/.nuget/packages/",
-        "outputPath": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/MyConsoleApp/obj/",
+        "outputPath": "/Users/evgenilysekhin/Pictures/netologia c#/LysekhinE_GUN46/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/evgenilysekhin/.nuget/NuGet/NuGet.Config"
