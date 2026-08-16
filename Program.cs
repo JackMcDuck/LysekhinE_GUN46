@@ -18,34 +18,31 @@
 
         Console.WriteLine("\nType bitwise operation symbol(&, |, ^)");
         string? symbol = Console.ReadLine();
+
+        int result = 0;
         
         switch (symbol)
         {
             case "&":
                 Console.WriteLine($"\n--> Your operation in binary: {Convert.ToString(a, 2)} & {Convert.ToString(b, 2)}\n");
-                int result = a & b;
-                Console.WriteLine($"Result:\nDecimal (Base-10): {result}");
-                Console.WriteLine($"Binary (Base-2): {Convert.ToString(result, 2)}");
-                Console.WriteLine($"Hexadecimal (Base-16): {result:X}");
+                result = a & b;
                 break;
             case "|":
-                Console.WriteLine($"\n--> Your operation in binary: {Convert.ToString(a, 2)} ^ {Convert.ToString(b, 2)}\n");
-                result = a ^ b;
-                Console.WriteLine($"Result:\nDecimal (Base-10): {result}");
-                Console.WriteLine($"Binary (Base-2): {Convert.ToString(result, 2)}");
-                Console.WriteLine($"Hexadecimal (Base-16): {result:X}");
+                Console.WriteLine($"\n--> Your operation in binary: {Convert.ToString(a, 2)} | {Convert.ToString(b, 2)}\n");
+                result = a | b;
                 break;
             case "^":
                 Console.WriteLine($"\n--> Your operation in binary: {Convert.ToString(a, 2)} ^ {Convert.ToString(b, 2)}\n");
                 result = a ^ b;
-                Console.WriteLine($"Result:\nDecimal (Base-10): {result}");
-                Console.WriteLine($"Binary (Base-2): {Convert.ToString(result, 2)}");
-                Console.WriteLine($"Hexadecimal (Base-16): {result:X}");
                 break;
             default:
                 Console.WriteLine("Unknown operation");
                 break;
         }
+
+        Console.WriteLine($"Result:\nDecimal (Base-10): {result}");
+        Console.WriteLine($"Binary (Base-2): {Convert.ToString(result, 2)}");
+        Console.WriteLine($"Hexadecimal (Base-16): {result:X}");
 
     }
 }
