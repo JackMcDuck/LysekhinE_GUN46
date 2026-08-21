@@ -4,9 +4,9 @@
     {
         //Задание 1
         // С помощью цикла for (или while) выведите первые 10 чисел Фиббоначи (см. Задание из 3 урока)
+        uint elementsNumber = 10;
         int firstNumber = 0;
         int secondNumber = 1;
-        uint elementsNumber = 5;
 
         Console.WriteLine($"\nFirst {elementsNumber} numbers of Fibonacci sequence: ");
         for (int i = 0; i < elementsNumber; i++)
@@ -34,7 +34,7 @@
 
         // Задание 3
         // С помощью вложенных циклов for выведите таблицу умножения от 1 до 5. Каждая строка таблицы должна быть выведена в отдельной строке.
-        int baseNumber = 10;
+        int baseNumber = 5;
 
         Console.WriteLine($"\n\nMultiplication table for number {baseNumber}: ");
 
