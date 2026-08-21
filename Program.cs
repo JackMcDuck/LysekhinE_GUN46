@@ -4,24 +4,18 @@
     {
         //Задание 1
         // С помощью цикла for (или while) выведите первые 10 чисел Фиббоначи (см. Задание из 3 урока)
+        int firstNumber = 0;
+        int secondNumber = 1;
         uint elementsNumber = 5;
-        int[] fibonacci = new int[elementsNumber];
-        if(elementsNumber > 1)
-        {
-            fibonacci[0] = 0;
-            fibonacci[1] = 1;  
-        }
 
         Console.WriteLine($"\nFirst {elementsNumber} numbers of Fibonacci sequence: ");
-        for (int i = 0; i < fibonacci.Length; i++)
+        for (int i = 0; i < elementsNumber; i++)
         {
-            if (i < 2)
-            {
-                Console.Write($"{fibonacci[i]} ");
-                continue;
-            }
-            fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-            Console.Write($"{fibonacci[i]} ");
+            Console.Write($"{firstNumber} ");
+
+            int nextNumber = firstNumber + secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = nextNumber;
         }
 
         // Задание 2
@@ -43,7 +37,7 @@
         int baseNumber = 10;
 
         Console.WriteLine($"\n\nMultiplication table for number {baseNumber}: ");
-        
+
         //верхняя строка
         Console.Write("\t");
         for (int i = 1; i <= baseNumber; i++)
