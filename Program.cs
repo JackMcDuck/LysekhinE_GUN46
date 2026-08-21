@@ -21,7 +21,7 @@
                 continue;
             }
             fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
-            Console.Write($"{fibonacci[i]} ");;
+            Console.Write($"{fibonacci[i]} ");
         }
 
         // Задание 2
