@@ -40,7 +40,7 @@ namespace GamePrototype.Combat
 
         private void HandleCombatInput(Unit player, Unit enemy, RockPaperScissors rockPaperScissors)
         {
-            var enemyInput = (RockPaperScissors) _random.Next(1, 3);
+            var enemyInput = (RockPaperScissors) _random.Next(1, 4);
             Console.WriteLine($"Result player = {rockPaperScissors} and enemy = {enemyInput}");
             switch (rockPaperScissors) 
             {
@@ -73,7 +73,7 @@ namespace GamePrototype.Combat
         private void ApplyDamage(Unit attacker, Unit defender)
         {
             defender.ApplyDamage(attacker.GetUnitDamage());
-            Console.WriteLine($"{attacker.Name} hits {defender.Name} with {attacker.GetUnitDamage()} damage. {defender.Name} health {defender.Health}/{defender.MaxHealth}");
+            Console.WriteLine($"{attacker.Name} hits {defender.Name}. {defender.Name} health {defender.Health}/{defender.MaxHealth}");
             if (defender.Health == 0) 
             {
                 Console.WriteLine($"{defender.Name} is dead!");

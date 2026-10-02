@@ -18,7 +18,7 @@ namespace GamePrototype.Units
             }
             
             _items.Add(item);
-            //Console.WriteLine($"{item.Name} added to inventory");
+            Console.WriteLine($"{item.Name} added to inventory");
             return true;
         }
 

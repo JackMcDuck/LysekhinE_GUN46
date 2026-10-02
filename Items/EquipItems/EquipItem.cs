@@ -7,6 +7,8 @@ namespace GamePrototype.Items.EquipItems
     {
         private uint _durability;
         private uint _maxDurability;
+
+        public uint MaxDurability => _maxDurability;
         public uint Durability { get => _durability; protected set => _durability = value; }
         public override bool Stackable => false;
 
@@ -15,13 +17,20 @@ namespace GamePrototype.Items.EquipItems
         protected EquipItem(uint maxDurability, string name) : base(name) 
         {
             _maxDurability = maxDurability;
-            //Durability = maxDurability;
+            Durability = maxDurability;
         }
 
-        public void ReduceDurability(uint delta) => _durability -= delta;
+        public void ReduceDurability(uint delta) 
+        {
+            _durability -= delta;
+            if (_durability <= 0)
+            {
+                _durability = 0;
+            }
+        }
 
         public void Repair(uint delta) => 
-            _durability += _durability + delta > _maxDurability 
+            _durability = _durability + delta > _maxDurability 
             ? _maxDurability 
             : _durability + delta;
     }

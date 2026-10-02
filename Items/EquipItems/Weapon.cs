@@ -2,7 +2,7 @@
 
 namespace GamePrototype.Items.EquipItems
 {
-    public sealed class Weapon : EquipItem
+    public class Weapon : EquipItem
     {
         public Weapon(uint damage, uint durability, string name) : base(durability, name) => Damage = damage;
 
@@ -10,4 +10,6 @@ namespace GamePrototype.Items.EquipItems
 
         public override EquipSlot Slot => EquipSlot.Weapon;
     }
+
+    
 }

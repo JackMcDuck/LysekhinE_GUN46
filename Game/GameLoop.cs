@@ -3,6 +3,12 @@ using GamePrototype.Dungeon;
 using GamePrototype.Units;
 using GamePrototype.Utils;
 
+public enum Difficulty
+{
+    Easy = 1,
+    Hard
+}
+
 namespace GamePrototype.Game
 {
     public sealed class GameLoop
@@ -22,10 +28,46 @@ namespace GamePrototype.Game
 
         private void Initialize()
         {
-            Console.WriteLine("Welcome, player!");
-            _dungeon = DungeonBuilder.BuildDungeon();
+            Console.WriteLine("Welcome, player! Choose your difficulty:\n1 - Easy, 2 - Hard: ");
+            Difficulty difficulty = 0;
+            UnitFactoryDemo factory;
+            DungeonBuilder builder;
+
+            while (difficulty == 0)
+            {
+                if(int.TryParse(Console.ReadLine(), out int input))
+                {
+                    switch (input)
+                    {
+                        case 1:
+                            difficulty = Difficulty.Easy;
+                            break;
+                        case 2:
+                            difficulty = Difficulty.Hard;
+                            break;
+                        default:
+                            Console.WriteLine("Unknown commad. Try Again.  Choose your difficulty:\n1 - Easy, 2 - Hard: ");
+                            break;
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Use 1 to choose Easy or 2 to choose Hard");
+                }
+            }
+            if(difficulty == Difficulty.Easy)
+            {
+                factory = new EasyUnitFactory();
+                builder = new EasyDungeonBuilder(factory);
+            }
+            else
+            {
+                factory = new HardUnitFactory();
+                builder = new HardDungeonBuilder(factory);
+            }
+            _dungeon = builder.BuildDungeon();
             Console.WriteLine("Enter your name");
-            _player = UnitFactoryDemo.CreatePlayer(Console.ReadLine());
+            _player = factory.CreatePlayer(Console.ReadLine());
             Console.WriteLine($"Hello {_player.Name}");
         }
 
@@ -65,8 +107,8 @@ namespace GamePrototype.Game
             success = true;
             if (currentRoom.Loot != null) 
             {
+                Console.WriteLine($"You found {currentRoom.Loot.Name}!");
                 _player.AddItemToInventory(currentRoom.Loot);
-                //Console.WriteLine($"You found {currentRoom.Loot.Name}!");
             }
             if (currentRoom.Enemy != null) 
             {
